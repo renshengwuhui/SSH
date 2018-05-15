@@ -1,0 +1,364 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>sshtest</groupId>
+  <artifactId>sshtest1</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>SSHTest1 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+ <repositories>
+  	<repository>
+  		<id>repo1</id>
+  		<url>https://mvnrepository.com/</url>
+  	</repository>
+  	<repository>
+  		<id>repo2</id>
+  		<url>http://central.maven.org/maven2/</url>
+  	</repository>
+  </repositories>
+  <properties>
+  	<junit.version>4.12</junit.version> 
+  	<spring.version>5.0.6.RELEASE</spring.version>   
+  	<hibernate.version>5.3.0.CR2</hibernate.version>
+  	<jcl-over-slf4j.version>1.8.0-beta2</jcl-over-slf4j.version>
+  	<logback.version>1.3.0-alpha3</logback.version>
+  	<jstl.version>1.1.1</jstl.version>
+  	<taglibs-standard-impl.version>1.2.5</taglibs-standard-impl.version>
+  	<javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+  	<commons-dbcp2.version>2.2.0</commons-dbcp2.version>
+  	<commons-dbcp.version>1.4</commons-dbcp.version>
+  	<c3p0.version>0.9.1.2</c3p0.version>
+  	<hibernate-c3p0.version>5.3.0.CR2</hibernate-c3p0.version>
+  	<mysql-connector-java.version>5.1.46</mysql-connector-java.version> 
+  	<jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
+  	<jackson.version>2.9.5</jackson.version>
+  	<!-- <log4j-core.version>2.11.0</log4j-core.version> -->
+  	<commons-fileupload.version>1.3.3</commons-fileupload.version>
+  	<lombok.version>1.16.20</lombok.version>
+  </properties>
+  <dependencies>
+  	 <!--unit test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- spring start -->
+
+	
+	<dependency>
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-core</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	
+	<exclusions>
+	
+	
+	<exclusion>
+	
+	<groupId>commons-logging</groupId>
+	
+	<artifactId>commons-logging</artifactId>
+	
+	</exclusion>
+	
+	</exclusions>
+	
+	</dependency>
+	
+
+	<dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-aop</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-context</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-context-support</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-oxm</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-orm</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-jdbc</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-tx</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	
+	<!-- <dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-jcl</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency> -->
+	
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-expression</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	<!-- web -->
+	
+	
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-web</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	
+	<dependency>
+	
+	<groupId>org.springframework</groupId>
+	
+	<artifactId>spring-webmvc</artifactId>
+	
+	<version>${spring.version}</version>
+	
+	</dependency>
+	
+	<!-- test -->
+	
+	
+	
+	<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-test</artifactId>
+	<version>${spring.version}</version>
+	</dependency>
+	<!-- spring end -->
+	<!-- hibernate start-->
+	<!-- core -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	<!-- cache -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-ehcache</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	
+	<!-- hibernate end -->
+	
+		<!-- log -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${jcl-over-slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<!-- JSTL -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+		<!-- taglibs -->
+		
+		<dependency>
+		
+		<groupId>org.apache.taglibs</groupId>
+		
+		<artifactId>taglibs-standard-impl</artifactId>
+		
+		<version>${taglibs-standard-impl.version}</version>
+		
+		</dependency>
+				<!-- javax.servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet-api.version}</version>
+		</dependency>
+		<!-- Database Connect Pool start-->
+		<!-- hibernate c3p0 -->
+		<dependency>
+			<groupId>org.hibernate</groupId> 
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>${hibernate-c3p0.version}</version>
+		</dependency>
+		<!-- hibernate suggest -->
+		<dependency>
+			<groupId>c3p0</groupId> 
+			<artifactId>c3p0</artifactId>
+			<version>${c3p0.version}</version>
+		</dependency>
+		<!-- spring suggest -->
+		<dependency>
+			<groupId>org.apache.commons</groupId> 
+			<artifactId>commons-dbcp2</artifactId>
+			<version>${commons-dbcp2.version}</version>
+		</dependency>
+		<!-- DBCP -->
+		<dependency>
+			<groupId>commons-dbcp</groupId> 
+			<artifactId>commons-dbcp</artifactId>
+			<version>${commons-dbcp.version}</version>
+		</dependency>
+		<!-- Database Connect Pool end-->
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>${mysql-connector-java.version}</version>
+		</dependency>
+		<!-- json数据 使springMVC可以返回json值-->
+		<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-mapper-asl</artifactId>
+		    <version>${jackson-mapper-asl.version}</version>
+		</dependency>
+		<!-- jackson start -->
+		<!-- Jackson可以轻松的将Java对象转换成json对象和xml文档,同样也可以将json、xml转换成Java对象-->
+		<dependency>
+	      <groupId>com.fasterxml.jackson.core</groupId>
+	      <artifactId>jackson-core</artifactId>
+	      <version>${jackson.version}</version>
+	    </dependency>
+	    <dependency>
+	      <groupId>com.fasterxml.jackson.core</groupId>
+	      <artifactId>jackson-annotations</artifactId>
+	      <version>${jackson.version}</version>
+	    </dependency>
+	    <dependency>
+	      <groupId>com.fasterxml.jackson.core</groupId>
+	      <artifactId>jackson-databind</artifactId>
+	      <version>${jackson.version}</version>
+	    </dependency>
+		<!-- jackson end -->
+		<!-- log4j -->
+	<!-- 	<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		    <version>${log4j-core.version}</version>
+		</dependency> -->
+		<!-- fileupload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>${commons-fileupload.version}</version>
+		</dependency>
+		<!-- lombok -->
+		<dependency>
+	    <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>${lombok.version}</version>
+	    <scope>provided</scope>
+	    </dependency>
+</dependencies>
+  <build>
+    <finalName>SSHTest1</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>WebContent</directory>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+            <plugin>  
+            	<groupId>org.apache.maven.plugins</groupId>  
+            	<artifactId>maven-compiler-plugin</artifactId>  
+            	<version>3.1</version>  
+            	<configuration>  
+                	<source>1.8</source>  
+                	<target>1.8</target>  
+            	</configuration>  
+        		</plugin>  
+        </plugins>
+    </build>
+</project>
